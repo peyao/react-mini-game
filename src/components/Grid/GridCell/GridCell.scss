@@ -28,19 +28,14 @@ $bombColor: red;
     border-color: $disabledColor;
     background-color: $disabledColor;
     pointer-events: none;
-    .contents {
-      visibility: hidden;
-    }
   }
 
   &.rewarded {
-    @extend &.disabled;
     border-color: $rewardColor;
     background-color: $rewardColor;
   }
 
   &.bomb {
-    @extend &.disabled;
     border-color: $bombColor;
     background-color: $bombColor;
     color: white;
