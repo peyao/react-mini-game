@@ -1,0 +1,48 @@
+$width: 100px;
+$height: 100px;
+$disabledColor: grey;
+$rewardColor: gold;
+$bombColor: red;
+
+.GridCell {
+  display: inline-block;
+  border: 1px solid #000;
+  width: $width;
+  height: $height;
+  margin: 5px;
+  cursor: pointer;
+
+  .contents {
+    height: $height;
+    line-height: $height;
+    user-select: none;
+  }
+
+  &.hidden {
+    .contents {
+      visibility: hidden;
+    }
+  }
+
+  &.disabled {
+    border-color: $disabledColor;
+    background-color: $disabledColor;
+    pointer-events: none;
+    .contents {
+      visibility: hidden;
+    }
+  }
+
+  &.rewarded {
+    @extend &.disabled;
+    border-color: $rewardColor;
+    background-color: $rewardColor;
+  }
+
+  &.bomb {
+    @extend &.disabled;
+    border-color: $bombColor;
+    background-color: $bombColor;
+    color: white;
+  }
+}
